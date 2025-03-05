@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "setup_test_environment",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "-c",
+                "import os, json, shutil; source_dir = os.path.join('${workspaceFolder}', 'test_source'); dest_dir = os.path.join('${workspaceFolder}', 'test_destination'); os.makedirs(source_dir, exist_ok=True); os.makedirs(dest_dir, exist_ok=True); os.makedirs(os.path.join(dest_dir, '1001 - 123 Main St - Office Building'), exist_ok=True); os.makedirs(os.path.join(dest_dir, '1002 - 456 Oak Ave - Apartment Complex'), exist_ok=True); with open(os.path.join(source_dir, '123 Main St - Document.pdf'), 'w') as f: f.write('Test content'); with open(os.path.join(source_dir, '123 Main St - Banks Fee Letter.pdf'), 'w') as f: f.write('Test content'); with open(os.path.join('${workspaceFolder}', 'debug_config.json'), 'w') as f: json.dump({'source_folder': source_dir, 'destination_parent_folder': dest_dir, 'polling_interval_seconds': 5}, f, indent=4); print('Test environment created')"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}

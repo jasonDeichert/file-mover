@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "File Mover Service",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/file_mover.py",
+            "args": [
+                "--config",
+                "${workspaceFolder}/config.json",
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "File Mover Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_file_mover.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "File Mover with Test Environment",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/file_mover.py",
+            "preLaunchTask": "setup_test_environment",
+            "args": [
+                "--config",
+                "${workspaceFolder}/debug_config.json",
+                "--interval",
+                "5"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}

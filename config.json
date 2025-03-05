@@ -1,0 +1,5 @@
+{
+    "source_folder": "C:\\Test Input",
+    "destination_parent_folder": "C:\\Users\\Jason\\Dropbox\\automation test",
+    "polling_interval_seconds": 10
+}
